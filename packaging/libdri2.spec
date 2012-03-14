@@ -2,7 +2,7 @@
 Name:       libdri2
 Summary:    X.Org DRI2 Extension client library
 Version:    0.1.0
-Release:    9
+Release:    10.6
 Group:      System/Libraries
 License:    Samsung Proprietary Licenses
 Source0:    libdri2-0.1.0.tar.gz
@@ -41,22 +41,10 @@ make %{?jobs:-j%jobs}
 rm -rf %{buildroot}
 %make_install
 
-
-
-
-
-
-
-
-
-
 %files
 %defattr(-,root,root,-)
 %{_libdir}/libdri2.so.*
 %exclude %{_libdir}/dri2.h
-%exclude %{_libdir}/dri2Util.h
-
-
 
 %files devel
 %defattr(-,root,root,-)
