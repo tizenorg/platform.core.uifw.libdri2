@@ -6,6 +6,7 @@ Release:    10.6
 Group:      System/Libraries
 License:    MIT
 Source0:    %{name}-%{version}.tar.gz
+Source1001: packaging/libdri2.manifest 
 BuildRequires:  pkgconfig(dri2proto)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xext)
@@ -31,6 +32,7 @@ DRI2 Extension client library (development library)
 
 
 %build
+cp %{SOURCE1001} .
 
 %reconfigure --disable-static
 make %{?jobs:-j%jobs}
@@ -49,6 +51,7 @@ rm -rf %{buildroot}
 
 
 %files
+%manifest libdri2.manifest
 %defattr(-,root,root,-)
 %{_libdir}/libdri2.so.*
 %exclude %{_libdir}/dri2.h
@@ -56,6 +59,7 @@ rm -rf %{buildroot}
 
 
 %files devel
+%manifest libdri2.manifest
 %defattr(-,root,root,-)
 %{_libdir}/libdri2.so
 %{_includedir}/dri2/*
