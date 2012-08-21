@@ -1,10 +1,11 @@
+#sbs-git:slp/pkgs/xorg/lib/libdri2 libdri2 0.1.0 a23f05ad3f1b312ca2cc8bfb55e661da2da0b12b
 
 Name:       libdri2
 Summary:    X.Org DRI2 Extension client library
-Version:    0.1.0
-Release:    10.6
+Version: 0.1.0
+Release:    9
 Group:      System/Libraries
-License:    MIT
+License:    Samsung Proprietary Licenses
 Source0:    %{name}-%{version}.tar.gz
 BuildRequires:  pkgconfig(dri2proto)
 BuildRequires:  pkgconfig(x11)
