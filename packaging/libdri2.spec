@@ -5,6 +5,7 @@ Release:    11
 Group:      System/Libraries
 License:    MIT
 Source0:    %{name}-%{version}.tar.gz
+Source1001: 	libdri2.manifest
 BuildRequires:  pkgconfig(dri2proto)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xext)
@@ -28,6 +29,7 @@ DRI2 Extension client library (development library)
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 
 %build
@@ -43,6 +45,7 @@ cp -af COPYING %{buildroot}/usr/share/license/%{name}
 
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 /usr/share/license/%{name}
 %{_libdir}/libdri2.so.*
@@ -51,6 +54,7 @@ cp -af COPYING %{buildroot}/usr/share/license/%{name}
 
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %{_libdir}/libdri2.so
 %{_includedir}/dri2/*
