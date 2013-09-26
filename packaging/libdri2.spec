@@ -34,7 +34,11 @@ cp %{SOURCE1001} .
 
 %build
 
+%ifarch %{ix86}
+CFLAGS="$CFLAGS -D_EMUL_" %reconfigure --disable-static
+%else
 %reconfigure --disable-static
+%endif
 make %{?jobs:-j%jobs}
 
 %install
