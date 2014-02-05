@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:       libdri2
 Summary:    X.Org DRI2 Extension client library
 Version:    0.1.0
@@ -10,6 +12,9 @@ BuildRequires:  pkgconfig(dri2proto)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xext)
 BuildRequires:  pkgconfig(xfixes)
+%if ! %{with x}
+ExclusiveArch:
+%endif
 
 
 %description
